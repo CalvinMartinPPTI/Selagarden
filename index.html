@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sela Garden</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(to bottom right, #dfffe3, #e7f8ff);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: clamp(1.8em, 5vw, 2.5em);
+      color: #256d43;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    h1:hover {
+      transform: scale(1.05);
+    }
+
+    #messageBox {
+      display: none;
+      margin-top: 20px;
+      background: #ffffffcc;
+      backdrop-filter: blur(8px);
+      border-radius: 20px;
+      padding: 25px;
+      max-width: 600px;
+      width: 100%;
+      line-height: 1.6;
+      color: #333;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      white-space: pre-line;
+      animation: fadeIn 1.5s ease forwards;
+      box-sizing: border-box;
+      text-align: left;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 18px;
+      border: none;
+      background-color: #2f855a;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #276749;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    @media (max-width: 600px) {
+      #messageBox {
+        padding: 18px;
+        font-size: 0.95em;
+      }
+
+      button {
+        font-size: 0.9em;
+        padding: 8px 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1 id="title">🌿 Sela Garden 🌿</h1>
+
+  <div id="messageBox">
+    <p>
+Selaku Sayang,
+
+meskipun perjalanan kita nanti mungkin nggak selalu mudah,
+aku tetap mau jalanin semuanya bersamamu.
+Bukan karena ku takut kehilangan,
+tapi karena ku tahu, nggak semua orang bisa saling nemuin kayak kita.
+
+Kita nggak perlu drama buat buktiin rasa,
+nggak perlu saling ngotot siapa yang paling benar.
+Kita cuma dua orang yang sama-sama berusaha jadi versi terbaik,
+buat diri sendiri dan buat satu sama lain.
+Dan di situ ku ngerasa tenang,
+karena sama kamu, semua terasa ringan dan jujur.
+
+Aku tahu, cinta bukan tentang janji besar atau kata manis,
+tapi tentang dua orang yang sama-sama mau bertahan,
+tanpa saling menuntut, tanpa saling menjauh.
+Aku mungkin nggak sempurna,
+tapi ku selalu pengin jadi tempat paling aman buat kamu pulang.
+
+Satu hal yang ku yakin,
+meninggalkan kamu nggak akan pernah jadi pilihan dalam hidupku.
+Kalau nanti ada hari yang berat, ku nggak akan lari.
+Aku akan tetap di sini, tenang, jujur, dan sepenuh hati,
+karena ku tahu, kamu adalah rumah yang selalu ingin ku jaga.
+    </p>
+    <button onclick="hideMessage()">Tutup</button>
+  </div>
+
+  <footer>From V, ❤️ For Sela</footer>
+
+  <script>
+    const title = document.getElementById('title');
+    const messageBox = document.getElementById('messageBox');
+
+    title.addEventListener('click', () => {
+      // kalau udah muncul, jangan munculkan lagi
+      if (messageBox.style.display === 'block') return;
+      messageBox.style.display = 'block';
+    });
+
+    function hideMessage() {
+      messageBox.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
